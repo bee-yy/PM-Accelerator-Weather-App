@@ -1,68 +1,344 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* =========================
+     Fluid Font Sizes
+     ========================= */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --font-size-display: 6rem; /* 96px */
+  --font-size-h1: 3.25rem;   /* 52px*/
+  --font-size-heading-sm: clamp(1.375rem, 3vw, 1.575rem);
+  
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-size-body-lg: clamp(1.75rem, 4vw, 2rem);     
+  --font-size-body-md: clamp(1.125rem, 3vw, 1.25rem); 
+  --font-size-body-sm: clamp(1rem, 2.5vw, 1.125rem);  
+
+  --font-size-caption: 1rem;                           
+  --font-size-caption-sm: clamp(0.75rem, 1vw, 0.875rem); /* 12–14px */
+
+  /* =========================
+     Line Heights
+     ========================= */
+
+  --line-height-display: 1;   /* 100% */
+  --line-height-h1: 1.2;
+  --line-height-heading-sm: 1.2;
+  --line-height-body-lg: 1.2;
+  --line-height-body-md: 1.2;
+  --line-height-body-sm: 1.2;
+  --line-height-caption: 1.2;
+
+  /* =========================
+     Letter Spacing
+     ========================= */
+
+  --letter-spacing-tight: -0.125rem; /* -2px */
+  --letter-spacing-normal: 0;
+
+  /* =========================
+     Font Weights
+     ========================= */
+
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+
+  /* =========================
+     Fluid Spacing
+     ========================= */
+
+  --spacing-xxs: clamp(0.125rem, 0.5vw, 0.25rem);
+  --spacing-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --spacing-sm: clamp(0.5rem, 1.5vw, 0.75rem);
+  --spacing-md: clamp(0.75rem, 2vw, 1rem);
+  --spacing-lg: clamp(1rem, 3vw, 1.5rem);
+  --spacing-xl: clamp(1.5rem, 4vw, 2rem);
+  --spacing-xxl: clamp(2rem, 5vw, 3rem);
+  --spacing-xxxl: clamp(3rem, 6vw, 4rem);
+
+  /* =========================
+     Colors
+     ========================= */
+
+  --color-bg: #1B1D1C;
+  --color-bg-2: #FFFFFF;
+  --color-bg-3: #D4D3D9;
+
+  --color-text: #FFFFFF;
+  --color-text-secondary: #1B1D1C;
+  --color-text-secondary-2: #D4D3D9;
+
+  --color-accent: #EA7A18;
+  --color-border: #FFFFFF;
+   --filter: invert(0);
+
+  /* Light mode overrides */
+
+
+  /* =========================
+     Fluid Border Radius
+     ========================= */
+
+  --radius-xxs: clamp(0.0625rem, 0.2vw, 0.125rem);
+  --radius-xs: clamp(0.125rem, 0.5vw, 0.25rem);
+  --radius-sm: clamp(0.25rem, 0.75vw, 0.5rem);
+  --radius-md: clamp(0.5rem, 1vw, 0.75rem);
+  --radius-lg: clamp(0.75rem, 1.5vw, 1rem);
+  --radius-xl: clamp(1rem, 2vw, 1.5rem);
+  --radius-xxl: clamp(1.5rem, 2.5vw, 2rem);
+  --radius-round: 50%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+[data-theme="light"] {
+  --color-bg: #fff5eb;
+  --color-bg-2: #1B1D1C;
+  --color-bg-3: #D4D3D9;
+
+  --color-text: #1B1D1C;
+  --color-text-secondary: #FFFFFF;
+  --color-text-secondary-2: #D4D3D9;
+
+  --color-accent: #EA7A18;
+  --color-border: #1B1D1C;
+
+   --filter: invert(1);
 }
-a:hover {
-  color: #535bf2;
+
+
+/* Typography Classes */
+/* =========================
+   Typography Utilities
+   ========================= */
+
+.display {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  font-style: italic;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-tight);
 }
+
+.heading-1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.heading-sm {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-heading-sm);
+  line-height: var(--line-height-heading-sm);
+  letter-spacing: 0;
+}
+
+
+.body-lg {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.body-md {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.body-sm {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.caption {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.caption-sm {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-caption-sm);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+
+
+/* || RESETS */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.root{
+  padding: 0;
+}
+
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  line-height: 1.5;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  /* all: unset; */
+  outline-color: transparent;
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+li{
+list-style-type:none;
 }
+
+html {
+  height: 100%;
+
+
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+/* height:100%*/
+}
+
+
+/*
+  ===========
+  LAYOUT
+  ===========
+  */
+
+  .app{
+    max-width: 1200px;
+    width: 90%;
+    margin:  var(--spacing-xl) auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxl);
+
+
+  }
+  body{
+  /* border: 2px solid yellow; */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+   transition: background-color 0.3s ease, color 0.3s ease;
+  /* padding: var(--spacing-lg); */
+}
+
+#content-container{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top:  var(--spacing-xxxl);
+    gap: var(--spacing-xxl);
+}
+
+.top-layer{
+    /* border: 2px solid ; */
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    gap: var(--spacing-lg);
+    justify-content: center;
+}
+
+.middle-layer{
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-xl);
+}
+
+.bottom-layer{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+/*
+===========
+TYPOGRAPHY
+===========
+*/
+
+
+
+/*
+=================================
+BACKGROUND/IMAGES/COLORS
+=================================
+*/
+
+
+
+
+ /*
+=============
+ACTIVE-STATES
+=============
+*/
+
+ /*
+===============
+UTILITY CLASSES
+===============
+*/
+.center{
+  text-align: center;
+}
+
+.orange{
+  color: var(--color-accent);
+}
+
+.fw-normal{
+  font-weight: var(--font-weight-normal);
+}
+
+/*
+=====================================
+LARGE SCREENS 
+=====================================
+*/
+
+/* * Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px){}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px){}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px){}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){}*/
+
+
+
+

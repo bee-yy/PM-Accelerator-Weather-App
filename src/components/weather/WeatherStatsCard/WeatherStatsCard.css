@@ -1,0 +1,11 @@
+.forecast-stats-card{
+    background-color: var(--color-bg-2);
+    color: var(--color-text-secondary);
+
+    padding: var(--spacing-lg);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+}

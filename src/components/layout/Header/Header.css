@@ -1,0 +1,35 @@
+header{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 40px;
+}
+
+.logo-wrapper{
+    width: 190px;
+    height: auto;
+}
+
+.invert-color{
+    filter: var(--filter);
+}
+
+.mode-toggle-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 76px;
+    padding: var(--spacing-xs) var( --spacing-sm);
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    background-color: var(--color-bg-2);
+    color: var(--color-text-secondary);
+}
+
+.dark-mode-icon{
+}
+

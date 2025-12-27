@@ -8,7 +8,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-padding: var(--spacing-lg) var(--spacing-md);
+padding: var(--spacing-md) var(--spacing-md);
 }
 
 .temperature-range{

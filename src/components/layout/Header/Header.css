@@ -20,14 +20,16 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 76px;
+    gap: var(--spacing-xs);
+    /* min-width: 76px; */
     padding: var(--spacing-xs) var( --spacing-sm);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     border: none;
     cursor: pointer;
     text-transform: capitalize;
     background-color: var(--color-bg-2);
     color: var(--color-text-secondary);
+    /* transition: all 0.2s ease; */
 }
 
 .dark-mode-icon{

@@ -4,9 +4,9 @@ return(
     <> 
     <div className='temperature-container'>
     <div className="temperature-icon-container">
-      <img src={props.imgName} alt="" />
+      <img width="108" height="108" src={props.imgName} alt={props.imgName} />
     </div>
-    <p className="temperature display orange">20 <sup>°</sup></p>
+    <p className="temperature display orange">20 <span>°</span></p>
     </div>
     <div className='location-info-container'>
       <p className='location heading-sm orange'>Burnaby, Canada</p>

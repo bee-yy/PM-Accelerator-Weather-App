@@ -91,7 +91,7 @@
 }
 
 [data-theme="light"] {
-  --color-bg: #fff5eb;
+  --color-bg: #ffffff;
   --color-bg-2: #1B1D1C;
   --color-bg-3: #D4D3D9;
 
@@ -99,7 +99,7 @@
   --color-text-secondary: #FFFFFF;
   --color-text-secondary-2: #D4D3D9;
 
-  --color-accent: #EA7A18;
+  --color-accent: #BB5B00;
   --color-border: #1B1D1C;
 
    --filter: invert(1);
@@ -163,7 +163,7 @@
 
 .caption {
   font-family: 'DM Sans', sans-serif;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-normal);
@@ -245,7 +245,7 @@ body {
   /* border: 2px solid yellow; */
   background-color: var(--color-bg);
   color: var(--color-text);
-   transition: background-color 0.3s ease, color 0.3s ease;
+   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   /* padding: var(--spacing-lg); */
 }
 
@@ -325,19 +325,48 @@ LARGE SCREENS
 */
 
 /* * Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px){}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px){}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px){}
+@media only screen and (min-width: 768px){
+    .app{
+    width: 85%;
+    margin:  var(--spacing-xxl) auto;
+  }
+ 
+
+.top-layer{
+    /* border: 2px solid ; */
+    display: grid;
+    grid-template-columns: repeat(4,minmax(150px,1fr));
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.middle-layer{
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-xl);
+}
+
+.bottom-layer{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px){}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px){}*/
+@media only screen and (min-width: 1200px){
+      .app{
+    margin:  var(--spacing-xxxl) auto;
+  }
+ 
+}
 
 
 

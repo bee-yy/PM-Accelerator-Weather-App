@@ -80,19 +80,19 @@ useEffect(() => {
     let data = await fetchWeatherData(coordinates.latitude, coordinates.longitude)
 
     setWeatherData({
-  currentTemperature: data.current.temperature_2m,
-      apparentTemperature:data.current.apparent_temperature,
-       humidity:data.current.relative_humidity_2m,
-       precipitation:data.current.precipitation,
-       wind:data.current.wind_speed_10m,
-       weatherCode:data.current.weather_code,
+      currentTemperature: data.current.temperature_2m || '',
+      apparentTemperature:data.current.apparent_temperature || '',
+       humidity:data.current.relative_humidity_2m || '',
+       precipitation:data.current.precipitation || '',
+       wind:data.current.wind_speed_10m || '',
+       weatherCode:data.current.weather_code || '',
 
  })
   setFiveDaysForecast({
   date:data.daily.time,
-      minTemps: data.daily.temperature_2m_min,
-      maxTemps: data.daily.temperature_2m_max,
-      weatherCodes: data.daily.weather_code,
+      minTemps: data.daily.temperature_2m_min || '',
+      maxTemps: data.daily.temperature_2m_max || '',
+      weatherCodes: data.daily.weather_code || '',
  })
 
     

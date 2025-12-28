@@ -17,7 +17,7 @@ A responsive weather web app that shows current weather and a 5-day forecast. Us
 1. Clone the repository:
 
    ```bash
-   git clone [repo link]
+   git clone https://github.com/bee-yy/PM-Accelerator-Weather-App.git
    ```
 2. Install dependencies:
 

@@ -11,7 +11,7 @@ function Footer() {
     <footer className='caption-sm'>
       <p className='developer underline'><a href="https://github.com/bee-yy"> Project By Blessing A</a></p>
       <p> &copy; <span className='current-year'>2025</span></p>
-      <button class='open-modal-btn underline' onClick={openModal}>About PM Accelerator</button>
+      <button className='open-modal-btn underline' onClick={openModal}>About PM Accelerator</button>
 
       {isOpen && (
         <dialog open>

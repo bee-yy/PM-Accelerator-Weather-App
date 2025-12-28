@@ -1,28 +1,41 @@
 import DailyForecastCard from './../DailyForecastCard/DailyForecastCard';
+import weatherCodeMap from '../WeatherCode';
 
-import SunnyIcon from '../../../assets/Sunny.svg'
-import PartlyCloudyIcon from '../../../assets/Partly Cloudy.svg'
-import OvercastIcon from '../../../assets/Overcast.svg'
-import FogIcon from '../../../assets/Fog.svg'
-import DrizzleIcon from '../../../assets/Drizzle.svg'
-import RainIcon from '../../../assets/Rain.svg'
-import Snowicon from '../../../assets/Snow.svg'
-import ThunderStromsIcon from '../../../assets/Thunderstorms.svg'
+
 
 import './DailyForecast.css'
-function DailyForecast(){
+function DailyForecast({data}){
 
+const getDay = (day) =>{
+const date = new Date(day);
+const shortDay = date.toLocaleDateString('en-US', { weekday: 'short' });
+return shortDay
+}
 return(
     <>
     <p className='body-md'>Daily Forecast</p>
 
     <div className="daily-forecast-cards-container">
-        <DailyForecastCard day = 'Tue' iconName = {RainIcon} lowTemp ={20}  highTemp = {14}/>
-        <DailyForecastCard day = 'Wed' iconName = {DrizzleIcon} lowTemp ={21}  highTemp = {15}/>
-                <DailyForecastCard day = 'tue' iconName = {SunnyIcon} lowTemp ={20}  highTemp = {14}/>
+       
+    {data.date.map((item,i) =>{
+        console.log("Date:", item);
+  console.log("Weather code at index", i, ":", data.weatherCodes[i]);
+  console.log("Icon for that code:", weatherCodeMap[data.weatherCodes[i]]);
+        console.log(item);
+       return  <DailyForecastCard key ={i} day = {getDay(item)} iconName = {weatherCodeMap[data.weatherCodes[i]]} lowTemp ={Math.floor(data.minTemps[i])}  
+       highTemp = {Math.floor(data.maxTemps[i])}/>
+    })}
 
-        <DailyForecastCard day = 'Thu' iconName = {PartlyCloudyIcon} lowTemp ={20}  highTemp = {14}/>
-        <DailyForecastCard day = 'Fri' iconName = {ThunderStromsIcon} lowTemp ={20}  highTemp = {14}/>
+    
+        {/* <DailyForecastCard day = 
+        {getDay(data.date[0])} iconName = {RainIcon} lowTemp ={data.minTemps[0]}  highTemp = {data.maxTemps[0]}/>
+
+        <DailyForecastCard day = {getDay(data.date[1])} iconName = {DrizzleIcon} lowTemp ={data.minTemps[1]}  highTemp = {data.maxTemps[1]}/>
+                <DailyForecastCard day = {getDay(data.date[2])} iconName = {SunnyIcon} lowTemp ={data.minTemps[2]}  highTemp = {data.maxTemps[2]}/>
+
+        <DailyForecastCard day ={getDay(data.date[3])} iconName = {PartlyCloudyIcon}
+         lowTemp ={data.minTemps[3]}  highTemp = {data.maxTemps[4]}/>
+        <DailyForecastCard day = {getDay(data.date[4])} iconName = {ThunderStromsIcon} lowTemp ={data.minTemps[4]}  highTemp = {data.maxTemps[4]}/> */}
 
     </div>
 

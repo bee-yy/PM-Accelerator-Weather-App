@@ -3,9 +3,6 @@ import weatherCodeMap from '../WeatherCode';
 
 
 
-
-
-
 function CurrentWeather(props){
   function getDate(){
   //Thursday, Dec 5, 2025
@@ -18,6 +15,8 @@ function CurrentWeather(props){
     });
 }
 let date = getDate();
+
+console.log("Weather Code Test:",props.weatherCode);
 return(
     <> 
     <div className='temperature-container'>

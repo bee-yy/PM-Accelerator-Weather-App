@@ -41,17 +41,34 @@ export async function fetchCityCoordinates(city) {
 //fetch weatherData
 export async function fetchWeatherData(latitude, longitude) {
   try {
+    if (!latitude || !longitude) throw new Error("Missing coordinates");
+
     const res = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,wind_speed_10m,weather_code&timezone=auto&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,weather_code&forecast_days=5`
     );
 
-    console.log("Response status:", res.status);
-    console.log("Response ok:", res.ok);
-    const data = await res.json();
-    console.log(data);
+    if (!res.ok) throw new Error(`Weather API Error ${res.status}`);
+
+    // get raw text first
+    const text = await res.text();
+    if (!text) throw new Error("Empty response from Weather API");
+
+    const data = JSON.parse(text); // now safe
     return data;
+
   } catch (error) {
     console.error("Failed to fetch weather data", error);
-    return;
+
+    // return safe fallback to prevent App crash
+    return {
+      current: {},
+      daily: {
+        time: [],
+        temperature_2m_min: [],
+        temperature_2m_max: [],
+        weather_code: [],
+      },
+    };
   }
 }
+

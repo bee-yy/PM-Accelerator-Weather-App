@@ -241,12 +241,37 @@ body {
 
 
   }
+
   body{
   /* border: 2px solid yellow; */
   background-color: var(--color-bg);
   color: var(--color-text);
    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   /* padding: var(--spacing-lg); */
+}
+
+.loading-screen,.error-screen{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  gap:24px
+}
+
+
+
+
+.error-screen button{
+  all:unset;
+    padding: var(--spacing-sm);
+    background-color: var(--color-bg-2);
+    color: var(--color-text-secondary);
+    text-align: center;
+    width: 100%;
+
+
 }
 
 #content-container{
@@ -278,28 +303,7 @@ body {
   flex-direction: column;
   gap: var(--spacing-lg);
 }
-/*
-===========
-TYPOGRAPHY
-===========
-*/
 
-
-
-/*
-=================================
-BACKGROUND/IMAGES/COLORS
-=================================
-*/
-
-
-
-
- /*
-=============
-ACTIVE-STATES
-=============
-*/
 
  /*
 ===============

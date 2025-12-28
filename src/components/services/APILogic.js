@@ -1,7 +1,7 @@
 //fetch city by IP Address
 export async function fetchCityByIP() {
   try {
-    const res = await fetch("http://ip-api.com/json/");
+    const res = await fetch('https://ipapi.co/json/');
     if (!res.ok) throw new Error(`IP API Error ${res.status}`);
     const data = await res.json();
     return {

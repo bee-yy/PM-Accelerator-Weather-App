@@ -10,7 +10,7 @@ A responsive weather web app that shows current weather and a 5-day forecast. Us
 * **State Management:** React `useState` / `useEffect`
 
 ## Live Link and Code Link
-* **Live Demo:** [view]()
+* **Live Demo:** [view](https://pm-accelerator-weather-app-tau.vercel.app)
 * **Source Code:** [Github](https://github.com/bee-yy/PM-Accelerator-Weather-App])
 
 ## How to Run Locally
@@ -43,7 +43,7 @@ A responsive weather web app that shows current weather and a 5-day forecast. Us
 
 ## APIs Used
 * **Weather Data:** Open Meteo API
-* **IP Geolocation:** [http://ip-api.com/json/](http://ip-api.com/json/)
+* **IP Geolocation:** [https://ipapi.co/json/'](https://ipapi.co/json/')
 
 ## Known Limitations
 * IP-based location may be approximate, not precise

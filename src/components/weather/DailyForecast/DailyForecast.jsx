@@ -18,11 +18,7 @@ return(
     <div className="daily-forecast-cards-container">
        
     {data.date.map((item,i) =>{
-        console.log("Date:", item);
-  console.log("Weather code at index", i, ":", data.weatherCodes[i]);
-  console.log("Icon for that code:", weatherCodeMap[data.weatherCodes[i]]);
-        console.log(item);
-       return  <DailyForecastCard key ={i} day = {getDay(item)} iconName = {weatherCodeMap[data.weatherCodes[i]]} lowTemp ={Math.floor(data.minTemps[i])}  
+           return  <DailyForecastCard key ={i} day = {getDay(item)} iconName = {weatherCodeMap[data.weatherCodes[i]]} lowTemp ={Math.floor(data.minTemps[i])}  
        highTemp = {Math.floor(data.maxTemps[i])}/>
     })}
 

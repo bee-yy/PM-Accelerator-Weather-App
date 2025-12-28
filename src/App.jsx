@@ -24,7 +24,7 @@ function App() {
       maxTemps: [],
       weatherCodes:[],
     })
-
+    const [searchInput, setSearchInput] = useState("");
     
 
 //toggle theme 
@@ -47,8 +47,13 @@ getCityName()
 useEffect(() => {
   if (location.city) {
     async function getCoords() {
-       let cords =  await fetchCityCoordinates(location.city);
-       setCoordinates(cords)
+       let {latitude, longitude, country} =  await fetchCityCoordinates(location.city);
+       setCoordinates({ latitude:latitude,
+        longitude: longitude})
+        setLocation((prev) =>{
+          return {...prev,
+          country:country,}
+        })
     }
   getCoords();
   }
@@ -62,10 +67,10 @@ useEffect(() => {
 }, [coordinates])
 
  //display data to console
-  useEffect(() =>{
-    if(location.city) console.log(location);
-  },
-  [location.city])
+  // useEffect(() =>{
+  //   if(location.city) console.log(location);
+  // },
+  // [location.city])
 
  useEffect(() =>{
   if(coordinates.latitude && coordinates.longitude)
@@ -96,25 +101,36 @@ useEffect(() => {
   },[coordinates])
 
   
-
-useEffect
-   const toggleTheme = () =>{
+const toggleTheme = () =>{
     setTheme((prev)=>{
       return prev === "dark" ? "light":"dark"
 
     })
 
-console.log(theme);
    }
+
+const handleCitySearch = (e) =>{
+  if (!searchInput) return;
+    e.preventDefault();
+    setLocation((prev) =>{
+      return{ ...prev,city:searchInput}
+    })
+  setSearchInput("");
+     }
+
+  const handleChange = (value) =>{
+    setSearchInput(value);
+  }
   return (
 
+  
     <>
     <div className='app'>
    
     <Header theme={theme} toggleTheme = {toggleTheme}/>
   <main>
     <h1 className='heading-1 center' >What’s it looking like outside? </h1>
-    <SearchBar/>
+    <SearchBar value ={searchInput} onClick = {handleCitySearch} onChange ={handleChange}/>
     
      <article id='content-container'>
    <div className="top-layer"> 
